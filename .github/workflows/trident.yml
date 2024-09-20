@@ -31,7 +31,7 @@ jobs:
       # Start solana-test-validator on a different port
       - name: Start solana-test-validator
         run: |
-          solana-test-validator --rpc-port 8900 &
+          solana-test-validator --rpc-port 8901 &
           echo $! > solana-test-validator.pid
 
       # Ensure the validator is ready
