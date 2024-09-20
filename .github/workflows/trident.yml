@@ -31,7 +31,7 @@ jobs:
       # Start solana-test-validator in the background
       - name: Start solana-test-validator
         run: |
-          solana-test-validator --rpc-port 8899 &
+          solana-test-validator &
           echo $! > solana-test-validator.pid
 
       # Ensure the validator is ready
