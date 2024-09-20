@@ -8,7 +8,7 @@ mod state;
 use contexts::*;
 use state::*;
 
-declare_id!("J8adapkvtdxjhnMLPkiX5sLD2uoALJhkSaXSQ47fR6sJ");
+declare_id!("B7nqqKunr6F9ajFFTk1SXXKbWYkDHXdu6rvKNV37XgzE");
 
 #[program]
 pub mod dao {
