@@ -28,6 +28,21 @@ jobs:
       - run: anchor build
         shell: bash
         
+      # Start solana-test-validator in the background
+      - name: Start solana-test-validator
+        run: |
+          solana-test-validator --rpc-port 8899 &
+          echo $! > solana-test-validator.pid
+
+      # Ensure the validator is ready
+      - name: Wait for solana-test-validator
+        run: sleep 5 # Adjust this duration if needed
+
+      # Run your tests
       - run: anchor test
         shell: bash
 
+      # Stop the solana-test-validator
+      - name: Stop solana-test-validator
+        run: |
+          kill $(cat solana-test-validator.pid)
